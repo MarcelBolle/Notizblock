@@ -3,19 +3,33 @@
 // ich brauche notizen
 let notes = ['Banane', 'Apfel', 'Birne', 'Traube'];
 
+let trashNotes = [];
+
 // -> wann werden sie angezeigt?
 function renderNotes() {
    let contentRef = document.getElementById("content");
    contentRef.innerHTML = "";
    
    for (let indexNote = 0; indexNote < notes.length; indexNote++) {
-    const note = notes[indexNote];
-    contentRef.innerHTML += getNoteTemplate(note);
+    contentRef.innerHTML += getNoteTemplate(indexNote);
    }
 }
 
-function getNoteTemplate(note) {
-    return `<p>+ ${note}</p>`;
+function renderTrashNotes() {
+   let trashContentRef = document.getElementById("trash_content");
+   trashContentRef.innerHTML = "";
+   
+   for (let indexTrashNote = 0; indexTrashNote < trashNotes.length; indexTrashNote++) {
+    trashContentRef.innerHTML += getTrashNoteTemplate(indexTrashNote);
+   }
+}
+
+function getNoteTemplate(indexNote) {
+    return `<p>+ ${notes[indexNote]} <button onclick="deleteNote(${indexNote})">X</button> </p>`;
+}
+
+function getTrashNoteTemplate(indexTrashNote) {
+    return `<p>+ ${trashNotes[indexTrashNote]} <button onclick="deleteNote(${indexTrashNote})">X</button> </p>`;
 }
 
    // ich muss definieren wo sie angezeigt werden
@@ -36,4 +50,17 @@ function addNote(note) {
 }
 
 // notizen löschen
+
+// welche notiz muss gelöscht werden
+// wann muss die notiz gelöscht werden
+// anzeige updaten
+
+function deleteNote(indexNote) {
+    let trashNote = notes.splice(indexNote, 1);
+    trashNotes.push(trashNote);
+    renderNotes();
+    renderTrashNotes();
+
+}
+
 // notizen archivieren
