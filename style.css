@@ -19,3 +19,9 @@ body {
     justify-content: center;
     gap: 8px;
 }
+
+.notes_style {
+    padding: 16px;
+    border: inset 6px;
+    border-color: rgb(39, 37, 37);
+}

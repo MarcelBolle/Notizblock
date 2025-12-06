@@ -60,7 +60,6 @@ function deleteNote(indexNote) {
     trashNotes.push(trashNote);
     renderNotes();
     renderTrashNotes();
-
 }
 
 // notizen archivieren
