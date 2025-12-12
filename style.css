@@ -1,27 +1,45 @@
-*{
-    box-sizing: border-box;
-    margin: 0 auto;
-    scroll-behavior: smooth;
-}
 
 html {
     background-color: blanchedalmond;
 }
 
 body {
+    max-width: 1440px;
+}
 
+dialog {
+    margin: auto;
+    gap: 8px;
+    background-color: rgb(243, 218, 180);
+    
+}
+
+dialog::backdrop {
+  background-color: lightgreen;
 }
 
 .main_block {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+        /* align-items: center;
+    justify-content: center; */
+    margin: 10px 60px;
     gap: 8px;
 }
 
-.notes_style {
-    padding: 16px;
-    border: inset 6px;
-    border-color: rgb(39, 37, 37);
+.input_section {
+    display: flex;
+    flex-direction: column;
+}
+
+.input_title{
+    display: flex;
+}
+
+.input_note {
+    min-width: 320px;       /* Nutzt die volle Breite */
+    height: 100px;     /* Feste Höhe */
+    resize: vertical;  /* Erlaubt dem User, das Feld unten rechts größer zu ziehen (nur nach unten) */
+    padding: 10px;     /* Innenabstand, damit der Text nicht am Rand klebt */
+    font-family: Arial, sans-serif; /* Damit die Schriftart zur Seite passt */
 }

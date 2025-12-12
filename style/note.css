@@ -1,0 +1,22 @@
+.notes_style {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    border: inset 6px;
+    border-color: rgb(39, 37, 37);
+    gap: 16px;
+}
+
+.notes_overview{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.btn_template {
+    border-radius: 8px;
+    border: 1px solid grey;
+    background-color: rgba(0, 0, 0, 0.625); 
+    color: white;
+}

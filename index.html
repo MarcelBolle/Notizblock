@@ -8,20 +8,41 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style/standard.css">
+    <link rel="stylesheet" href="./style/note.css">
+
+    <script src="./Script/templates.js"></script>
     <script src="script.js"></script>
 </head>
 
-<body onload="renderNotes()">
-    <div class="main_block"><h1>Notizblock</h1>
-    <input id="note_input" type="text">
-    <button onclick="addNote()">Notiz Speichern</button>
-    <h2>Notes</h2>
-    <div id="content" class="notes_style">
-    </div>
-    <h2>Trash</h2>
-    <div id="trash_content">
-    </div>
-    </div>
+<body onload="init()">
+    <section class="main_block">
+        <h1>Mein Notizblock</h1>
+        <div>
+            <span class="input_section">
+                <p>Titel</p>
+                <input id="note_title" class="input_title" type="text">
+                <p>Inhalt</p>
+                <textarea id="note_input" class="input_note" rows="4"></textarea>
+            </span>
+        </div>
+        <button onclick="addNote()">Notiz Speichern</button>
+
+        <section class="notes_overview">
+            <h2>Notes</h2>
+            <div id="content" class="notes_style">
+            </div>
+            <h2>Archiv</h2>
+            <div id="archiv_content" class="notes_style">
+            </div>
+        </section>
+        <button onclick="showTrashDialog()">Papierkorb</button>
+        <dialog id="trash_dialog">
+            <h2>Trash</h2>
+            <div id="trash_content" class="notes_style">
+            </div>
+            <button onclick="closeTrashDialog()">schließen</button>
+        </dialog>
+    </section>
 
 </body>
 
