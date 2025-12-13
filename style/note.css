@@ -20,3 +20,22 @@
     background-color: rgba(0, 0, 0, 0.625); 
     color: white;
 }
+
+.template_content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 320px;
+}
+
+.template_content > :nth-child(2) {
+    flex-grow: 1;
+    text-align: center;
+    padding: 0 10px;
+    min-width: 0;
+}
+
+.template_content button {
+    max-height: 16px;
+    
+}
